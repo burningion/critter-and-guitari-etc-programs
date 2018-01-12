@@ -5,8 +5,11 @@ import pygame.gfxdraw
 import importlib
 import argparse
 
+import os
+
 parser = argparse.ArgumentParser(description="Critter and Guitari ETC program debug environment")
 parser.add_argument('module', type=str, help="Filename of the Pygame program to test")
+parser.add_argument('-r', '--record', type=int, help="Record out to image sequence for ffmpeg")
 args = parser.parse_args()
 
 # imports the actual module we're loading
@@ -44,6 +47,17 @@ i.setup(screen, etc)
 
 running = True
 
+recording = False
+counter = -1
+
+if args.record:
+    recording = True
+
+if recording:
+    if not os.path.exists('imageseq'):
+        os.makedirs('imageseq')
+    counter = 0
+
 while running:
     screen.fill(THECOLORS['black'])
     i.draw(screen, etc)
@@ -60,3 +74,9 @@ while running:
         if event.type == pygame.QUIT: # if you try to quit, let's leave this loop
             running = False
     pygame.display.flip()
+
+    if recording and counter < args.record:
+        pygame.image.save(screen, "imageseq/%05d.jpg" % counter)
+        counter += 1
+    elif recording and counter == args.record:
+        exit()
