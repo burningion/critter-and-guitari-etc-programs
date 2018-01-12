@@ -67,7 +67,7 @@ def draw(screen, etc) :
         
             color = (halfSies[0] + int(halfSies[0] * math.sin(i * .01 + time.time())),
                      halfSies[1] + int(halfSies[1] * math.sin(i * .015 + time.time())),
-                     halfSies[2] + int(halfSies[2] * math.sin(i * .021 + time.time())),)
+                     halfSies[2] + int(halfSies[2] * math.sin(i * .021 + time.time())))
             pygame.gfxdraw.filled_circle(screen,
                                          x,
                                          i,
