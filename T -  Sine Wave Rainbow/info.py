@@ -1,0 +1,7 @@
+name = "T - Sine Wave Rainbow" 
+description = "Sine Wave Rainbows, Man"
+knob1 = "X Drift"
+knob2 = "Size of Sine Waves"
+knob3 = "Number of Waves" 
+knob4 = "Color"
+released = "May 2018"

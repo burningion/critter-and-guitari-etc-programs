@@ -4,7 +4,9 @@ Example Programs in Pygame for the Critter and Guitari ETC
 
 ## How to Run This
 
-You can either copy and paste the Python files on to the USB drive on the Critter and Guitari, or use the WIFI dongle, and paste in the text directly into the editor. There will be a video walking through this shortly, but in the meantime, here are a few screenshots.
+Copy the `T - 10 PRINT` and the `T - Sine Wave Rainbow` patches on to your ETC's drive. You should see them added to the list of patches.
+
+If you have a WIFI dongle, you can paste the `sine-wave.py` or the `10-print.py` file contents directly into the ETC editor.
 
 ## Using the ETC Testing Environment
 

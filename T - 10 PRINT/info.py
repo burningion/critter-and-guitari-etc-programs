@@ -1,0 +1,7 @@
+name = "T - 10 PRINT" 
+description = "Classic 10 PRINT Program implemented with Triggers"
+knob1 = "Line Thickness"
+knob2 = "Angle of Lines"
+knob3 = "Number of Squares" 
+knob4 = "Color"
+released = "May 2018"
