@@ -13,7 +13,7 @@ parser.add_argument('-r', '--record', type=int, help="Record out to image sequen
 args = parser.parse_args()
 
 # imports the actual module we're loading
-i = importlib.import_module(args.module.split('.py')[0])
+etc_mode = importlib.import_module(args.module.split('.py')[0])
 
 import random
 import math
@@ -38,12 +38,13 @@ class ETC(object):
         self.audio_trig = False
         self.random_color = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
         self.midi_note_new = False
+        self.mode_root = os.path.dirname(etc_mode.__file__)
 
     def color_picker(self):
         return self.random_color
 etc = ETC()
 
-i.setup(screen, etc)
+etc_mode.setup(screen, etc)
 
 running = True
 
@@ -60,12 +61,12 @@ if recording:
 
 while running:
     screen.fill(THECOLORS['black'])
-    i.draw(screen, etc)
+    etc_mode.draw(screen, etc)
 
     key = pygame.key.get_pressed()
     if key[pygame.K_q]:
         exit()
-    
+
     if key[pygame.K_SPACE]:
         etc.audio_trig = True
     if key[pygame.K_z]:
